@@ -23,8 +23,8 @@ module AuthHelper
 
   def get_token_from_code(auth_code)
     client = OAuth2::Client.new(
-      CLIENT_ID,
-      CLIENT_SECRET,
+      ENV['CLIENT_ID'],
+      ENV['CLIENT_SECRET'],
       :site => SITE,
       :authorize_url => AUTHORIZE_URL,
       :token_url => TOKEN_URL
@@ -41,8 +41,8 @@ module AuthHelper
     token_hash = session[:suzuri_token]
 
     client = OAuth2::Client.new(
-      CLIENT_ID,
-      CLIENT_SECRET,
+      ENV['CLIENT_ID'],
+      ENV['CLIENT_SECRET'],
       :site => SITE,
       :authorize_url => AUTHORIZE_URL,
       :token_url => TOKEN_URL
