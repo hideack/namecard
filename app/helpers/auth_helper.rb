@@ -2,7 +2,7 @@ module AuthHelper
   SITE = 'https://suzuri.jp/'
   AUTHORIZE_URL = '/oauth/authorize'
   TOKEN_URL = '/oauth/token'
-  SCOPES = ['k:app_record:read', 'k:app_record:write']
+  SCOPES = ['read', 'write']
   STATE = SecureRandom.alphanumeric
 
   def get_login_url
