@@ -57,4 +57,5 @@ module AuthHelper
     else
       access_token = token
     end
+  end
 end
