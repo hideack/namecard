@@ -32,7 +32,7 @@ module AuthHelper
 
     token = client.auth_code.get_token(
       auth_code,
-      :redirect_uri => authorize_url,
+      :redirect_uri => AUTHORIZE_URL,
       :scope => SCOPES.join(' ')
     )
   end
