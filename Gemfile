@@ -61,4 +61,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'oauth2'
 gem 'activerecord-session_store'
 gem 'dotenv-rails'
+gem 'mini_magick'
 
