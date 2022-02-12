@@ -32,6 +32,7 @@ class KeychainsController < ApplicationController
       :products => [
         :itemId => 1,
         :exemplaryItemVariantId => 151,
+        :published => true,
         :resizeMode => "contain",
       ]
     }
