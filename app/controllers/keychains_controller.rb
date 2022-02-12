@@ -30,9 +30,9 @@ class KeychainsController < ApplicationController
       :price => 2000,
       :description => "API経由で作成",
       :products => [
-        :itemId => 1,
-        :exemplaryItemVariantId => 151,
-        :published => true,
+        :itemId => 147,
+        #:exemplaryItemVariantId => 147,
+        :published => false,
         :resizeMode => "contain",
       ]
     }
