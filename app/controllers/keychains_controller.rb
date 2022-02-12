@@ -41,7 +41,7 @@ class KeychainsController < ApplicationController
       {:body => record.to_json, :headers => {'Authorization' => "Bearer #{token.token}", 'Content-Type' => 'application/json'}}
     )
 
-    logger.debug(response)
+    logger.debug(response.insepect)
 
 #    @keychain = Keychain.new(keychain_params)
 #
