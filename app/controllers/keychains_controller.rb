@@ -40,6 +40,9 @@ class KeychainsController < ApplicationController
       "https://suzuri.jp/api/v1/materials",
       {:body => record.to_json, :headers => {'Authorization' => "Bearer #{token.token}", 'Content-Type' => 'application/json'}}
     )
+
+    logger.debug(response)
+
 #    @keychain = Keychain.new(keychain_params)
 #
 #    respond_to do |format|
