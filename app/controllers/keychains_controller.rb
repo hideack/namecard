@@ -34,7 +34,7 @@ class KeychainsController < ApplicationController
         :exemplaryItemVariantId => 151,
         #:itemId => 147,
         #:exemplaryItemVariantId => 1952,
-        :published => false,
+        :published => true,
         :resizeMode => "contain",
       ]
     }
