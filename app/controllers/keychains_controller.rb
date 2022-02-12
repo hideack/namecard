@@ -1,5 +1,6 @@
 class KeychainsController < ApplicationController
   before_action :set_keychain, only: %i[ show edit update destroy ]
+  include AuthHelper
 
   # GET /keychains or /keychains.json
   def index
@@ -21,17 +22,35 @@ class KeychainsController < ApplicationController
 
   # POST /keychains or /keychains.json
   def create
-    @keychain = Keychain.new(keychain_params)
+    token = get_access_token
 
-    respond_to do |format|
-      if @keychain.save
-        format.html { redirect_to keychain_url(@keychain), notice: "Keychain was successfully created." }
-        format.json { render :show, status: :created, location: @keychain }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @keychain.errors, status: :unprocessable_entity }
-      end
-    end
+    record = {
+      :texture => "https://hideack.site/wp-content/uploads/2022/02/IMG_3573-1024x768.jpg",
+      :title => "れんしゅうそのいち",
+      :price => 2000,
+      :description => "API経由で作成",
+      :products => [
+        :itemId => 1,
+        :exemplaryItemVariantId => 151,
+        :resizeMode => "contain",
+      ]
+    }
+
+    response = token.post(
+      "https://suzuri.jp/api/v1/materials",
+      {:body => record.to_json, :headers => {'Authorization' => "Bearer #{token.token}", 'Content-Type' => 'application/json'}}
+    )
+#    @keychain = Keychain.new(keychain_params)
+#
+#    respond_to do |format|
+#      if @keychain.save
+#        format.html { redirect_to keychain_url(@keychain), notice: "Keychain was successfully created." }
+#        format.json { render :show, status: :created, location: @keychain }
+#      else
+#        format.html { render :new, status: :unprocessable_entity }
+#        format.json { render json: @keychain.errors, status: :unprocessable_entity }
+#      end
+#    end
   end
 
   # PATCH/PUT /keychains/1 or /keychains/1.json
