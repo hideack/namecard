@@ -24,6 +24,21 @@ class KeychainsController < ApplicationController
   def create
     token = get_access_token
 
+    require 'mini_magick'
+    image = MiniMagick::Image.open("./app/assets/images/860x860.png")
+
+    image.combine_options do |config|
+      config.font "./app/assets/fonts/VL-PGothic-Regular.ttf"
+      config.pointsize 48
+      config.fill "#ff0000"
+      config.gravity "center"
+      config.draw "text 0,0 どやさ"
+    end
+
+    temp_file = "./public/#{SecureRandom.hex}.png"
+    image.write temp_file
+    logger.debug(temp_file)
+
     record = {
       :texture => "https://hideack.site/wp-content/uploads/2022/02/IMG_3573-1024x768.jpg",
       :title => "れんしゅうそのいち",
