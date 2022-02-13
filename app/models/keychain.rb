@@ -3,6 +3,8 @@ class Keychain < ApplicationRecord
     require 'mini_magick'
     image = MiniMagick::Image.open("./app/assets/images/860x860.png")
 
+    logger.debug(params)
+
     image.combine_options do |config|
       config.font "./app/assets/fonts/VL-PGothic-Regular.ttf"
       config.pointsize 48
