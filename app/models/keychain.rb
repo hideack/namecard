@@ -8,7 +8,7 @@ class Keychain < ApplicationRecord
       config.pointsize 48
       config.fill "#ff0000"
       config.gravity "center"
-      config.draw "text 0,0 Hello!SUZURI"
+      config.draw "text 0,0 #{keychain_params[:message]}"
     end
 
     temp_name = "#{SecureRandom.hex}"

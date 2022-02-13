@@ -10,11 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_12_002651) do
+ActiveRecord::Schema.define(version: 2022_02_13_074516) do
 
   create_table "keychains", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "message"
   end
 
   create_table "sessions", force: :cascade do |t|
