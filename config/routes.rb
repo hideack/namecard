@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   root 'home#index'
   get '/authorize' => 'auth#gettoken'
   get '/main' => 'main#index'
+  get '/image/:name' => 'image#index'
 end
