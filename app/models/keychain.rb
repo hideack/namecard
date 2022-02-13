@@ -11,7 +11,6 @@ class Keychain < ApplicationRecord
       config.fill "#ff0000"
       config.gravity "center"
       config.annotate "0,0", message
-      #config.draw "text 0,0 #{message}"
     end
 
     temp_name = "#{SecureRandom.hex}"
