@@ -33,13 +33,17 @@ class KeychainsController < ApplicationController
       config.draw "text 0,0 Hello!SUZURI"
     end
 
-    temp_file = "./storage/#{SecureRandom.hex}.png"
+    temp_name = "#{SecureRandom.hex}"
+    temp_file = "./storage/#{temp_name}.png"
+    temp_url  = "https://suzuri-namecard.herokuapp.com/image/#{temp_name}"
     image.write temp_file
+
     logger.debug(temp_file)
+    logger.debug(temp_url)
 
     token = get_access_token
     record = {
-      :texture => temp_file,
+      :texture => temp_url,
       :title => "れんしゅうそのいち",
       :price => 2000,
       :description => "API経由で作成",
