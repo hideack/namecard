@@ -33,7 +33,7 @@ class KeychainsController < ApplicationController
       config.draw "text 0,0 Hello!SUZURI"
     end
 
-    temp_file = "./tmp/storage/#{SecureRandom.hex}.png"
+    temp_file = "./storage/#{SecureRandom.hex}.png"
     image.write temp_file
     logger.debug(temp_file)
 
