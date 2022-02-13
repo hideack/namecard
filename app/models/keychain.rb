@@ -1,4 +1,6 @@
 class Keychain < ApplicationRecord
+  include AuthHelper
+
   def publish
     require 'mini_magick'
     image = MiniMagick::Image.open("./app/assets/images/860x860.png")
