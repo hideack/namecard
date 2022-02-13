@@ -1,6 +1,5 @@
 class Keychain < ApplicationRecord
   def publish(token)
-    require 'mini_magick'
     image = MiniMagick::Image.open("./app/assets/images/860x860.png")
 
     logger.debug("MESSAGE = #{message}")
