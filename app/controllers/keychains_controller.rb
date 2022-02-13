@@ -23,9 +23,10 @@ class KeychainsController < ApplicationController
   # POST /keychains or /keychains.json
   def create
     @keychain = Keychain.new(keychain_params)
+    token = get_access_token
 
     respond_to do |format|
-      if @keychain.publish
+      if @keychain.publish(token)
         format.html { redirect_to keychains_url, notice: "Keychain was successfully created." }
         format.json { render :show, status: :created, location: @keychain }
       else

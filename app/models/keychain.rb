@@ -1,7 +1,5 @@
 class Keychain < ApplicationRecord
-  include AuthHelper
-
-  def publish
+  def publish(token)
     require 'mini_magick'
     image = MiniMagick::Image.open("./app/assets/images/860x860.png")
 
@@ -22,7 +20,6 @@ class Keychain < ApplicationRecord
     logger.debug(temp_url)
 
     if Rails.env == 'production'
-      token = get_access_token
       record = {
         :texture => temp_url,
         :title => "れんしゅうそのいち",
