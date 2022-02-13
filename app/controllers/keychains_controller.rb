@@ -22,8 +22,6 @@ class KeychainsController < ApplicationController
 
   # POST /keychains or /keychains.json
   def create
-    token = get_access_token
-
     require 'mini_magick'
     image = MiniMagick::Image.open("./app/assets/images/860x860.png")
 
@@ -32,21 +30,20 @@ class KeychainsController < ApplicationController
       config.pointsize 48
       config.fill "#ff0000"
       config.gravity "center"
-      config.draw "text 0,0 どやさ"
+      config.draw "text 0,0 Hello!SUZURI"
     end
 
-    temp_file = "./public/#{SecureRandom.hex}.png"
+    temp_file = "./tmp/storage/#{SecureRandom.hex}.png"
     image.write temp_file
     logger.debug(temp_file)
 
+    token = get_access_token
     record = {
-      :texture => "https://hideack.site/wp-content/uploads/2022/02/IMG_3573-1024x768.jpg",
+      :texture => temp_file,
       :title => "れんしゅうそのいち",
       :price => 2000,
       :description => "API経由で作成",
       :products => [
-        #:itemId => 1,
-        #:exemplaryItemVariantId => 151,
         :itemId => 147,
         :exemplaryItemVariantId => 1952,
         :published => true,
