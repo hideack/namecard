@@ -10,7 +10,8 @@ class Keychain < ApplicationRecord
       config.pointsize 64
       config.fill "#ff0000"
       config.gravity "center"
-      config.draw "text 0,0 #{message}"
+      config.annotate "0,0", message
+      #config.draw "text 0,0 #{message}"
     end
 
     temp_name = "#{SecureRandom.hex}"
