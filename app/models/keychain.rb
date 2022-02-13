@@ -2,6 +2,7 @@ class Keychain < ApplicationRecord
   def publish(token)
     require 'mini_magick'
     image = MiniMagick::Image.open("./app/assets/images/860x860.png")
+    message = params[:message]
 
     image.combine_options do |config|
       config.font "./app/assets/fonts/VL-PGothic-Regular.ttf"
