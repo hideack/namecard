@@ -3,14 +3,12 @@ class Keychain < ApplicationRecord
     require 'mini_magick'
     image = MiniMagick::Image.open("./app/assets/images/860x860.png")
 
-    logger.debug(params)
-
     image.combine_options do |config|
       config.font "./app/assets/fonts/VL-PGothic-Regular.ttf"
       config.pointsize 48
       config.fill "#ff0000"
       config.gravity "center"
-      config.draw "text 0,0 #{params[:message]}"
+      config.draw "text 0,0 XYZ"
     end
 
     temp_name = "#{SecureRandom.hex}"
