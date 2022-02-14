@@ -4,6 +4,6 @@ class AuthController < ApplicationController
   def gettoken
     token = get_token_from_code params[:code]
     session[:suzuri_token] = token.to_hash
-    redirect_to main_url
+    redirect_to keychains_url
   end
 end
