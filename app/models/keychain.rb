@@ -23,7 +23,7 @@ class Keychain < ApplicationRecord
     if Rails.env == 'production'
       record = {
         :texture => temp_url,
-        :title => "#{Date.current.strftime('%Y年%m月%d日 %H:%M:%Sに作成')}",
+        :title => "#{Date.current.strftime('%Y年%m月%d日に作成')}",
         :price => 2000,
         :description => "なふだメーカーで作成した素材画像です",
         :products => [
