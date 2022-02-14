@@ -12,6 +12,15 @@
   <% end %>
 
   <div class="field">
+    <%= form.radio_button :pattern, '1' %>
+    <%= image_tag 'pattern1.png', width:200 %><br>
+    <br>
+    <%= form.radio_button :pattern, '2' %>
+    <%= image_tag 'pattern2.png', width:200 %><br>
+    <br>
+    <%= form.radio_button :pattern, '3' %>
+    <%= image_tag 'pattern3.png', width:200 %><br>
+    <br>
     <%= form.label :message %>
     <%= form.text_field :message %>
   </div>

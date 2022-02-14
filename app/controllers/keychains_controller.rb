@@ -67,7 +67,7 @@ class KeychainsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def keychain_params
-      params.require(:keychain).permit(:message)
-      params.fetch(:keychain, {}).permit(:message)
+      params.require(:keychain).permit(:message, :pattern)
+      params.fetch(:keychain, {}).permit(:message, :pattern)
     end
 end
