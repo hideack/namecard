@@ -6,8 +6,8 @@ class Keychain < ApplicationRecord
 
     image.combine_options do |config|
       config.font "./app/assets/fonts/VL-PGothic-Regular.ttf"
-      config.pointsize 64
-      config.fill "#ff0000"
+      config.pointsize 72 
+      config.fill "#585c63"
       config.gravity "center"
       config.annotate "0,0", message
     end
@@ -23,9 +23,9 @@ class Keychain < ApplicationRecord
     if Rails.env == 'production'
       record = {
         :texture => temp_url,
-        :title => "れんしゅうそのいち",
+        :title => "#{Date.current.strftime('%Y年%m月%d日 %H:%M:%Sに作成')}",
         :price => 2000,
-        :description => "API経由で作成",
+        :description => "なふだメーカーで作成した素材画像です",
         :products => [
           :itemId => 147,
           :exemplaryItemVariantId => 1952,
