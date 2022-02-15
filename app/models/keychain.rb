@@ -1,5 +1,9 @@
 class Keychain < ApplicationRecord
+  validates :message, length: {maximum: 15, too_long: "最大%{count}文字までです"}
+  validates :pattern, numericality: { only_integer:true }
+
   def publish(token)
+    valid?
     image = MiniMagick::Image.open("./app/assets/images/pattern#{pattern}.png")
 
     logger.debug("MESSAGE = #{message}")
