@@ -12,7 +12,7 @@
   <% end %>
 
   <div class="field">
-    <%= form.radio_button :pattern, '1' %>
+    <%= form.radio_button :pattern, '1', {:checked => true }%>
     <%= image_tag 'pattern1.png', width:200 %><br>
     <br>
     <%= form.radio_button :pattern, '2' %>
@@ -23,6 +23,11 @@
     <br>
     <%= form.label :message %>
     <%= form.text_field :message %>
+  </div>
+  <div>
+    ※注意<br>
+    下のボタンを押すとご自身のSUZURIアカウントに文字とテンプレートが合成されたアクキーが公開される状態で追加されます！<br>
+    <br>
   </div>
 
   <div class="actions">
