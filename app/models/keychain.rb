@@ -46,10 +46,12 @@ class Keychain < ApplicationRecord
         {:body => record.to_json, :headers => {'Authorization' => "Bearer #{token.token}", 'Content-Type' => 'application/json'}}
       )
 
-      @suzuri_response = JSON.parse(response.body)
+      suzuri_response = JSON.parse(response.body)
 
       logger.debug(response.status)
       logger.debug(@suzuri_response)
+
+      suzuri_response
     else
       true
     end
