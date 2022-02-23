@@ -4,7 +4,8 @@ class Keychain < ApplicationRecord
 
   def publish(token)
     unless valid?
-      raise ActiveRecord::RecordInvalid, self
+      # raise ActiveRecord::RecordInvalid, self
+      return false
     end
 
     image = MiniMagick::Image.open("./app/assets/images/pattern#{pattern}.png")
