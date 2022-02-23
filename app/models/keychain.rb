@@ -47,7 +47,7 @@ class Keychain < ApplicationRecord
       )
 
       logger.debug(response.status)
-      logger.debug(response.body)
+      logger.debug(JSON.parse(response.body))
     else
       true
     end
