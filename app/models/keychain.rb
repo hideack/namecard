@@ -49,7 +49,7 @@ class Keychain < ApplicationRecord
       suzuri_response = JSON.parse(response.body)
 
       logger.debug(response.status)
-      logger.debug(@suzuri_response)
+      logger.debug(suzuri_response)
 
       suzuri_response
     else
