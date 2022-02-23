@@ -29,6 +29,7 @@ class KeychainsController < ApplicationController
       @suzuri_response = @keychain.publish(token)
 
       if @suzuri_response
+        @suzuri_response = "TEST"
         format.html { redirect_to keychains_url, notice: "Keychain was successfully created." }
         format.json { render :show, status: :created, location: @keychain }
       else
