@@ -1,7 +1,8 @@
 <p id="notice"><%= notice %></p>
 <% if flash[:suzuri_response] %>
-  応答:<%= flash[:suzuri_response][:products][0][:sampleUrl] %><br>
-  応答:<%= flash[:suzuri_response][:products][0][:sampleImageUrl] %><br>
+  以下のアクリルキーホルダーが作成されました。<br>
+  <%= link_to image_tag(flash[:suzuri_response][:products][0][:sampleImageUrl]),flash[:suzuri_response][:products][0][:sampleUrl] %><br>
+  <%= link_to 'SUZURIの商品詳細ページへ', flash[:suzuri_response][:products][0][:sampleUrl] %><br>
 <% end %>
 
 <h1>名前入りSUZURIグッズジェネレーター</h1>
