@@ -30,7 +30,7 @@ class KeychainsController < ApplicationController
 
       if @suzuri_response
         @suzuri_response = "TEST"
-        format.html { redirect_to keychains_url, notice: "Keychain was successfully created." }
+        format.html { redirect_to keychains_url, notice: "Keychain was successfully created." , flash: {suzuri_response: @suzuri_response}}
         format.json { render :show, status: :created, location: @keychain }
       else
         format.html { render :new, status: :unprocessable_entity }
