@@ -1,6 +1,7 @@
 <p id="notice"><%= notice %></p>
 <% if flash[:suzuri_response] %>
-  応答:<%= flash[:suzuri_response] %><br>
+  応答:<%= flash[:suzuri_response][:products][0][:sampleUrl] %><br>
+  応答:<%= flash[:suzuri_response][:products][0][:sampleImageUrl] %><br>
 <% end %>
 
 <h1>名前入りSUZURIグッズジェネレーター</h1>
