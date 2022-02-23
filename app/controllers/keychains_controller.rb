@@ -1,5 +1,6 @@
 class KeychainsController < ApplicationController
   before_action :set_keychain, only: %i[ show edit update destroy ]
+  before_action :set_suzuri_response
   include AuthHelper
 
   # GET /keychains or /keychains.json
@@ -65,6 +66,9 @@ class KeychainsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_keychain
       @keychain = Keychain.find(params[:id])
+    end
+
+    def set_suzuri_response
       @suzuri_response = nil
     end
 
