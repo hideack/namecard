@@ -4,7 +4,6 @@ class Keychain < ApplicationRecord
 
   def publish(token)
     unless valid?
-      # raise ActiveRecord::RecordInvalid, self
       return false
     end
 
