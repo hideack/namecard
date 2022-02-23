@@ -1,6 +1,5 @@
 class KeychainsController < ApplicationController
   before_action :set_keychain, only: %i[ show edit update destroy ]
-  before_action :set_suzuri_response
   include AuthHelper
 
   # GET /keychains or /keychains.json
@@ -27,10 +26,10 @@ class KeychainsController < ApplicationController
     token = get_access_token
 
     respond_to do |format|
-      @suzuri_response = @keychain.publish(token)
+      suzuri_response = @keychain.publish(token)
 
-      if @suzuri_response
-        format.html { redirect_to keychains_url, notice: "Keychain was successfully created." }
+      if suzuri_response
+        format.html { redirect_to keychains_url(suzuri_response: suzuri_response), notice: "Keychain was successfully created." }
         format.json { render :show, status: :created, location: @keychain }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -66,10 +65,6 @@ class KeychainsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_keychain
       @keychain = Keychain.find(params[:id])
-    end
-
-    def set_suzuri_response
-      @suzuri_response = nil
     end
 
     # Only allow a list of trusted parameters through.
