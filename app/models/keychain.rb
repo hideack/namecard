@@ -1,5 +1,5 @@
 class Keychain < ApplicationRecord
-  validates :message, length: {minimum:1, maximum: 15, too_long: "最大%{count}文字までです"}
+  validates :message, length: {minimum:1, maximum: 15, too_short: "1文字以上%{count}%文字以下で入力してください", too_long: "最大%{count}文字までです"}
   validates :pattern, numericality: { only_integer:true }
 
   def publish(token)
