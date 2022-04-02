@@ -1,5 +1,6 @@
 class TShirtsController < ApplicationController
   before_action :set_t_shirt, only: %i[ show edit update destroy ]
+  include AuthHelper
 
   # GET /t_shirts or /t_shirts.json
   def index
