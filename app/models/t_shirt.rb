@@ -12,7 +12,7 @@ class TShirt < ApplicationRecord
     logger.debug("MESSAGE = #{message}")
 
     image.combine_options do |config|
-      config.font "./app/assets/fonts/VL-PGothic-Regular.ttf"
+      config.font "./app/assets/fonts/aachen_bold.ttf"
       config.pointsize 72 
       config.fill "#585c63"
       config.gravity "center"
