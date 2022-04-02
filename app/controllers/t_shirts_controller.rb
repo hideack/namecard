@@ -29,7 +29,7 @@ class TShirtsController < ApplicationController
       suzuri_response = @t_shirt.publish(token)
 
       if suzuri_response
-        format.html { redirect_to t_shirt_url(@t_shirt), notice: "T shirt was successfully created." }
+        format.html { redirect_to t_shirt_url, notice: "T shirt was successfully created." , flash: {suzuri_response: suzuri_response}}
         format.json { render :show, status: :created, location: @t_shirt }
       else
         format.html { render :new, status: :unprocessable_entity }
