@@ -70,5 +70,6 @@ class TShirtsController < ApplicationController
     # Only allow a list of trusted parameters through.
     def t_shirt_params
       params.require(:t_shirt).permit(:message, :pattern)
+      params.fetch(:t_shirt, {}).permit(:message, :pattern)
     end
 end
