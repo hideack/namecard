@@ -22,9 +22,12 @@ class TShirtsController < ApplicationController
   # POST /t_shirts or /t_shirts.json
   def create
     @t_shirt = TShirt.new(t_shirt_params)
+    token = get_access_token
 
     respond_to do |format|
-      if @t_shirt.save
+      suzuri_response = @t_shirt.publish(token)
+
+      if suzuri_response
         format.html { redirect_to t_shirt_url(@t_shirt), notice: "T shirt was successfully created." }
         format.json { render :show, status: :created, location: @t_shirt }
       else
