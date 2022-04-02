@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>T Shirts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Message</th>
+      <th>Pattern</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @t_shirts.each do |t_shirt| %>
+      <tr>
+        <td><%= t_shirt.message %></td>
+        <td><%= t_shirt.pattern %></td>
+        <td><%= link_to 'Show', t_shirt %></td>
+        <td><%= link_to 'Edit', edit_t_shirt_path(t_shirt) %></td>
+        <td><%= link_to 'Destroy', t_shirt, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New T Shirt', new_t_shirt_path %>

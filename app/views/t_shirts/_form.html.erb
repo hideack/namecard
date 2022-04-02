@@ -1,0 +1,27 @@
+<%= form_with(model: t_shirt, local: true) do |form| %>
+  <% if t_shirt.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(t_shirt.errors.count, "error") %> prohibited this t_shirt from being saved:</h2>
+
+      <ul>
+        <% t_shirt.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :message %>
+    <%= form.text_field :message %>
+  </div>
+
+  <div class="field">
+    <%= form.label :pattern %>
+    <%= form.number_field :pattern %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
