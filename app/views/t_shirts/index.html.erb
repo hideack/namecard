@@ -1,4 +1,9 @@
 <p id="notice"><%= notice %></p>
+<% if flash[:suzuri_response] %>
+  以下のTシャツが作成されました。<br>
+  <%= link_to image_tag(flash[:suzuri_response][:products][0][:sampleImageUrl]),flash[:suzuri_response][:products][0][:sampleUrl] %><br>
+  <%= link_to 'SUZURIの商品詳細ページへ', flash[:suzuri_response][:products][0][:sampleUrl] %><br>
+<% end %>
 
 <h1>T Shirts</h1>
 
