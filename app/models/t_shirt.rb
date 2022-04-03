@@ -9,6 +9,7 @@ class TShirt < ApplicationRecord
 
     image = MiniMagick::Image.open("./app/assets/images/tshirts-front.png")
 
+    message.gsub!(/\s/, "\n")
     logger.debug("MESSAGE = #{message}")
 
     image.combine_options do |config|
