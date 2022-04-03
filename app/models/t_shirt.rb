@@ -30,9 +30,9 @@ class TShirt < ApplicationRecord
     if Rails.env == 'production'
       record = {
         :texture => temp_url,
-        :title => "#{Date.current.strftime('%Y年%m月%d日に作成')}",
+        :title => message
         :price => 2000,
-        :description => "なふだメーカーで作成した素材画像です",
+        :description => "#{Date.current.strftime('%Y年%m月%d日に作成')}",
         :products => [
           :itemId => 1,
           :exemplaryItemVariantId => 151,
