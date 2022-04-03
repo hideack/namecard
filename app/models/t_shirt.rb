@@ -7,13 +7,13 @@ class TShirt < ApplicationRecord
       return false
     end
 
-    image = MiniMagick::Image.open("./app/assets/images/pattern#{pattern}.png")
+    image = MiniMagick::Image.open("./app/assets/images/tshirts-front.png")
 
     logger.debug("MESSAGE = #{message}")
 
     image.combine_options do |config|
       config.font "./app/assets/fonts/aachen_bold.ttf"
-      config.pointsize 72 
+      config.pointsize 128 
       config.fill "#585c63"
       config.gravity "center"
       config.annotate "0,0", message
@@ -34,8 +34,8 @@ class TShirt < ApplicationRecord
         :price => 2000,
         :description => "なふだメーカーで作成した素材画像です",
         :products => [
-          :itemId => 147,
-          :exemplaryItemVariantId => 1952,
+          :itemId => 1,
+          :exemplaryItemVariantId => 151,
           :published => true,
           :resizeMode => "contain",
         ]
