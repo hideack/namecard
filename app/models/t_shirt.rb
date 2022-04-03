@@ -13,7 +13,7 @@ class TShirt < ApplicationRecord
 
     image.combine_options do |config|
       config.font "./app/assets/fonts/aachen_bold.ttf"
-      config.pointsize 128 
+      config.pointsize 512
       config.fill "#585c63"
       config.gravity "center"
       config.annotate "0,0", message
